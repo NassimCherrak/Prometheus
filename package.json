@@ -1,0 +1,13 @@
+{
+  "name": "Prometheus",
+  "description": "Bot for Discord",
+  "version": "0.0.0",
+  "main": "prometheus.js",
+  "scripts": {
+    "start": "node prometheus.js"
+  },
+  "dependencies": {
+    "discord.js": "11.1.0",
+    "request": "2.81.0"
+  }
+}
