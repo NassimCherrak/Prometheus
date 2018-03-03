@@ -1,0 +1,1 @@
+worker: node prometheus.js
