@@ -112,8 +112,8 @@ function loopMessage(message, first, second, type, list) {
 	}
 }
 client.on('message', message => {
-	loopMessage(message, '<', '>', 1, obj);
-	loopMessage(message, '[', ']', 2, mon);
+	//loopMessage(message, '<', '>', 1, obj);
+	//loopMessage(message, '[', ']', 2, mon);
 	if(message.content.toLowerCase().startsWith(command)) {
 		var getURL = "https://cidsupplies.000webhostapp.com/?gr=0";
 		var addURL = "https://cidsupplies.000webhostapp.com/?gr=1";
