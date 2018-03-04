@@ -112,8 +112,6 @@ function loopMessage(message, cont, first, second, type, list) {
 	}
 }
 client.on('message', message => {
-	//loopMessage(message, '<', '>', 1, obj);
-	//loopMessage(message, '[', ']', 2, mon);
 	if(message.content.toLowerCase().startsWith(command)) {
 		var getURL = "https://cidsupplies.000webhostapp.com/?gr=0";
 		var addURL = "https://cidsupplies.000webhostapp.com/?gr=1";
@@ -146,7 +144,6 @@ client.on('message', message => {
 					getURL,
 					["http://code.jquery.com/jquery.js"],
 					function (err, window) {
-						resDisplay += getURL;
 						var eb = window.$('div#bombs span:eq(0)').text() + "\n";
 						var fa = window.$('div#bombs span:eq(1)').text() + "\n";
 						var ih = window.$('div#bombs span:eq(2)').text() + "\n";
@@ -278,9 +275,5 @@ client.on('message', message => {
 		}
 	}
 });
-/*client.on('message', message => {
-	loopMessage(message, '<', '>', 1, obj);
-	loopMessage(message, '[', ']', 2, mon);
-});*/
 
 client.login(process.env.BOT_TOKEN);
