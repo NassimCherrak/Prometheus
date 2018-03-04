@@ -39,6 +39,7 @@ client.on('message', message => {
 				if (count < numOfResults) {
 					numOfResults = count;
 				}
+				resDisplay += "count = " + count + "\n";
 				for(var i=0; i<numOfResults; i++) {
 					resDisplay += "\n```";
 					resDisplay += window.$('div.ilist:eq(0) table tbody tr:eq('+ i + ') td:eq(0)').text();
