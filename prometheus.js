@@ -256,7 +256,7 @@ client.on('message', message => {
 				break;
 			case "item":
 				if(cmdArray.length == 3) {
-					var ite = '['+ cmdArray[2] + ']';
+					var ite = '<'+ cmdArray[2] + '>';
 					loopMessage(message, ite, '<', '>', 1, obj);
 				}
 				break;
