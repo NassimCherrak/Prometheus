@@ -115,9 +115,9 @@ client.on('message', message => {
 	//loopMessage(message, '<', '>', 1, obj);
 	//loopMessage(message, '[', ']', 2, mon);
 	if(message.content.toLowerCase().startsWith(command)) {
-		var getURL = "http://cidsupplies.epizy.com/index.php?gr=0";
-		var addURL = "http://cidsupplies.epizy.com/index.php?gr=1";
-		var updURL = "http://cidsupplies.epizy.com/index.php?gr=2";
+		var getURL = "https://cidsupplies.000webhostapp.com/?gr=0";
+		var addURL = "https://cidsupplies.000webhostapp.com/?gr=1";
+		var updURL = "https://cidsupplies.000webhostapp.com/?gr=2";
 
 		var resDisplay = "";
 
