@@ -26,7 +26,7 @@ client.on('ready', () => {
 client.on('message', message => {
 	if(message.content.toLowerCase().startsWith(command)) {
 		var numOfResults = numOfResultsMax;
-		var searchURL = "http://ragi.al/search/iRO-Odin/" + message.content.substring(command.length).replace(" ","%20");
+		var searchURL = "http://ragi.al/search/iRO-Classic/" + message.content.substring(command.length).replace(" ","%20");
 		var resDisplay = "";
 		var currentRes = "";
 		var count;
