@@ -240,14 +240,17 @@ client.on('message', message => {
 					message.reply(resDisplay);
 				}
 				break;
-			case "monster":
+			case "mob":
 				if(cmdArray.length == 3) {
 					var mob = '['+ cmdArray[2] + ']';
 					loopMessage(message, mob, '[', ']', 2, mon);
 				}
 				break;
 			case "item":
-				//loopMessage(message, '<', '>', 1, obj);
+				if(cmdArray.length == 3) {
+					var ite = '['+ cmdArray[2] + ']';
+					loopMessage(message, ite, '<', '>', 1, obj);
+				}
 				break;
 			default:
 				resDisplay += "\n```";
