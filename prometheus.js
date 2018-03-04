@@ -98,7 +98,7 @@ function loopMessage(message, cont, first, second, type, list) {
 					);
 				}
 				else if(item.length < 30 && item.length > 1) {
-					resURL = "http://db.irowiki.org/classic/search/?quick=" + item.replace(" ","%20").replace(" ","%20").replace(" ","%20").replace(" ","%20") + "&type=" + type;
+					resURL = "http://db.irowiki.org/restart/search/?quick=" + item.replace(" ","%20").replace(" ","%20").replace(" ","%20").replace(" ","%20") + "&type=" + type;
 					resDisplay += resURL + "\n";
 					message.reply(resDisplay);
 				}
