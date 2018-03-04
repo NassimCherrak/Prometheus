@@ -23,8 +23,8 @@ function searchID(element, table) {
 	return "";
 }
 
-function loopMessage(message, first, second, type, list) {
-	var originalMes = message.content;
+function loopMessage(message, cont, first, second, type, list) {
+	var originalMes = cont;
 	var mes = originalMes;
 	var dbHTML;
 	if(mes.indexOf('<@') == -1 && mes.indexOf('<:') == -1 && mes.indexOf('<#') == -1) {
@@ -243,7 +243,7 @@ client.on('message', message => {
 			case "monster":
 				if(cmdArray.length == 3) {
 					var mob = '['+ cmdArray[2] + ']';
-					loopMessage(mob, '[', ']', 2, mon);
+					loopMessage(message, mob, '[', ']', 2, mon);
 				}
 				break;
 			case "item":
