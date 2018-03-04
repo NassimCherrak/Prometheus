@@ -8,7 +8,7 @@ var endMessage = "";
 client.on('ready', () => {
   console.log('I am ready!');
 });
-/*
+
 var obj = JSON.parse(fs.readFileSync('./items.json', 'utf8'));
 var mon = JSON.parse(fs.readFileSync('./monsters.json', 'utf8'));
 
@@ -108,8 +108,8 @@ function loopMessage(message, first, second, type, list) {
 			}
 		}
 	}
-}*/
-client.on('message', message => {
+}
+/*client.on('message', message => {
 	//loopMessage(message, '<', '>', 1, obj);
 	//loopMessage(message, '[', ']', 2, mon);
 	if(message.content.toLowerCase().startsWith(command)) {
@@ -251,10 +251,10 @@ client.on('message', message => {
 				message.reply(resDisplay);
 		}
 	}
-});
-/*client.on('message', message => {
+});*/
+client.on('message', message => {
 	loopMessage(message, '<', '>', 1, obj);
 	loopMessage(message, '[', ']', 2, mon);
-});*/
+});
 
 client.login(process.env.BOT_TOKEN);
