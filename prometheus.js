@@ -239,7 +239,6 @@ client.on('message', message => {
 					message.reply(resDisplay);
 				}
 				break;
-				break;
 			case "monster":
 				//loopMessage(message, '[', ']', 2, mon);
 				break;
