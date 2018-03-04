@@ -1,18 +1,3 @@
-/*const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.on('ready', () => {
-    console.log('I am ready!');
-});
-
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
-  	}
-});
-
-client.login(process.env.BOT_TOKEN);
-*/
 var fs = require('fs');
 var jsdom = require('jsdom');
 const Discord = require('discord.js');
@@ -23,7 +8,7 @@ var endMessage = "";
 client.on('ready', () => {
   console.log('I am ready!');
 });
-
+/*
 var obj = JSON.parse(fs.readFileSync('./items.json', 'utf8'));
 var mon = JSON.parse(fs.readFileSync('./monsters.json', 'utf8'));
 
@@ -123,10 +108,10 @@ function loopMessage(message, first, second, type, list) {
 			}
 		}
 	}
-}
+}*/
 client.on('message', message => {
-	loopMessage(message, '<', '>', 1, obj);
-	loopMessage(message, '[', ']', 2, mon);
+	//loopMessage(message, '<', '>', 1, obj);
+	//loopMessage(message, '[', ']', 2, mon);
 	if(message.content.toLowerCase().startsWith(command)) {
 		var getURL = "http://cidsupplies.epizy.com/index.php?gr=0";
 		var addURL = "http://cidsupplies.epizy.com/index.php?gr=1";
@@ -254,10 +239,10 @@ client.on('message', message => {
 				break;
 				break;
 			case "monster":
-				loopMessage(message, '[', ']', 2, mon);
+				//loopMessage(message, '[', ']', 2, mon);
 				break;
 			case "item":
-				loopMessage(message, '<', '>', 1, obj);
+				//loopMessage(message, '<', '>', 1, obj);
 				break;
 			default:
 				resDisplay += "\n```";
