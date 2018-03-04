@@ -137,6 +137,10 @@ client.on('message', message => {
 
 		var cmdArray = message.content.toLowerCase().split(" ");
 		switch(cmdArray[1]) {
+			case "hi":
+				resDisplay += "\n``` Hi! type !pro commands and you'll see what I can do for you\n";
+				message.reply(resDisplay);
+				break;
 			case "commands":
 				resDisplay += "\n``` Display Supplies\n";
 				resDisplay += "display all: !pro stock\n";
