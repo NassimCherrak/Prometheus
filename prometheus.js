@@ -3,6 +3,8 @@ var jsdom = require('jsdom');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+var command = "!pro";
+
 var endMessage = "";
 
 client.on('ready', () => {
@@ -239,10 +241,10 @@ client.on('message', message => {
 				break;
 				break;
 			case "monster":
-				loopMessage(message, '[', ']', 2, mon);
+				//loopMessage(message, '[', ']', 2, mon);
 				break;
 			case "item":
-				loopMessage(message, '<', '>', 1, obj);
+				//loopMessage(message, '<', '>', 1, obj);
 				break;
 			default:
 				resDisplay += "\n```";
