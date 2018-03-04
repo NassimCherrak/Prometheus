@@ -250,14 +250,23 @@ client.on('message', message => {
 						for(i=3; i<cmdArray.length; i++) {
 							mob += ' ' + cmdArray[i];
 						}
+						mob += ']';
 					}
-					message.reply(mob);
-					//loopMessage(message, mob, '[', ']', 2, mon);
+					loopMessage(message, mob, '[', ']', 2, mon);
 				}
 				break;
 			case "item":
-				if(cmdArray.length == 3) {
-					var ite = '<'+ cmdArray[2] + '>';
+				if(cmdArray.length >= 3) {
+					var ite = '<'+ cmdArray[2];
+					if(cmdArray.length == 3) {
+						ite += '>';
+					}
+					else{
+						for(i=3; i<cmdArray.length; i++) {
+							ite += ' ' + cmdArray[i];
+						}
+						mob += '>';
+					}
 					loopMessage(message, ite, '<', '>', 1, obj);
 				}
 				break;
