@@ -251,7 +251,8 @@ client.on('message', message => {
 							mob += ' ' + cmdArray[i];
 						}
 					}
-					loopMessage(message, mob, '[', ']', 2, mon);
+					message.reply(mob);
+					//loopMessage(message, mob, '[', ']', 2, mon);
 				}
 				break;
 			case "item":
