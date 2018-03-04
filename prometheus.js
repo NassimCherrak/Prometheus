@@ -124,10 +124,152 @@ function loopMessage(message, first, second, type, list) {
 		}
 	}
 }
-
 client.on('message', message => {
 	loopMessage(message, '<', '>', 1, obj);
 	loopMessage(message, '[', ']', 2, mon);
+	if(message.content.toLowerCase().startsWith(command)) {
+		var getURL = "http://localhost:8080/index.php?gr=0";
+		var addURL = "http://localhost:8080/index.php?gr=1";
+		var updURL = "http://localhost:8080/index.php?gr=2";
+
+		var resDisplay = "";
+
+		var allItems = {
+			emptybottle: 0, 
+			fabric: 1,
+			immortal: 2, 
+			alcohol: 3, 
+			stem: 4, 
+			spore: 5, 
+			zenorc: 6, 
+			mermaid: 7, 
+			grenade: 8, 
+			acid: 9, 
+			coat: 10, 
+			slims: 11, 
+			starsand: 12
+		};
+
+		var cmdArray = message.content.toLowerCase().split(" ");
+		switch(cmdArray[1]) {
+			case "commands":
+
+			case "stock":
+				jsdom.env(
+					getURL,
+					["http://code.jquery.com/jquery.js"],
+					function (err, window) {
+						var eb = window.$('div#bombs span:eq(0)').text() + "\n";
+						var fa = window.$('div#bombs span:eq(1)').text() + "\n";
+						var ih = window.$('div#bombs span:eq(2)').text() + "\n";
+						var al = window.$('div#bombs span:eq(3)').text() + "\n";
+						var st = window.$('div#bombs span:eq(4)').text() + "\n";
+						var ps = window.$('div#bombs span:eq(5)').text() + "\n";
+						var zf = window.$('div#coats span:eq(1)').text() + "\n";
+						var hm = window.$('div#coats span:eq(2)').text() + "\n";
+						var bg = window.$('div#supplies span:eq(0)').text() + "\n";
+						var ab = window.$('div#supplies span:eq(1)').text() + "\n";
+						var gc = window.$('div#supplies span:eq(2)').text() + "\n";
+						var slim = window.$('div#supplies span:eq(3)').text() + "\n";
+						var wss = window.$('div#wss span:eq(0)').text() + "\n";
+
+						var allItemsDisplay = {
+							emptybottle: eb, 
+							fabric: fa,
+							immortal: ih, 
+							alcohol: al, 
+							stem: st, 
+							spore: ps, 
+							zenorc: zf, 
+							mermaid: hm, 
+							grenade: bg, 
+							acid: ab, 
+							coat: gc, 
+							slims: slim, 
+							starsand: wss
+						};
+
+						if(cmdArray.length == 2){
+							resDisplay += "\n``` Bombs: \n";
+							resDisplay += eb+fa+ih+al+st+ps;
+							resDisplay += "```";
+							resDisplay += "\n``` Coats: \n";
+							resDisplay += eb+zf+hm+al;
+							resDisplay += "```";
+							resDisplay += "\n``` Witch Starsand: \n";
+							resDisplay += wss;
+							resDisplay += "```";
+							resDisplay += "\n``` Supplies: \n";
+							resDisplay += bg+ab+gc+slim;
+							resDisplay += "```";
+							message.reply(resDisplay);
+						} else {
+							resDisplay += "```";
+							resDisplay += allItemsDisplay[cmdArray[2]];
+							resDisplay += "```";
+							message.reply(resDisplay);
+						}
+					}
+				);
+				break;
+			case "add":
+				if(cmdArray.length == 4) {
+					addURL += "&i=" + allItems[cmdArray[2]] + "&q=" + cmdArray[3];
+					jsdom.env(
+						addURL,
+						["http://code.jquery.com/jquery.js"],
+						function (err, window) {
+							resDisplay += "\n```";
+							resDisplay += window.$('div#res').text() + "\n";
+							resDisplay += "\n```";
+							message.reply(resDisplay);
+						}
+					);
+				} else {
+					resDisplay += "\n```";
+					resDisplay += "command input not recognized please use '!pro commands' to see available options";
+					resDisplay += "\n```";
+					message.reply(resDisplay);
+				}
+				break;
+			case "reset":
+				if(cmdArray.length == 4) {
+					updURL += "&i=" + allItems[cmdArray[2]] + "&q=" + cmdArray[3];
+					jsdom.env(
+						updURL,
+						["http://code.jquery.com/jquery.js"],
+						function (err, window) {
+							resDisplay += "\n```";
+							resDisplay += window.$('div#res').text() + "\n";
+							resDisplay += "\n```";
+							message.reply(resDisplay);
+						}
+					);
+				} else {
+					resDisplay += "\n```";
+					resDisplay += "command input not recognized please use '!pro commands' to see available options";
+					resDisplay += "\n```";
+					message.reply(resDisplay);
+				}
+				break;
+				break;
+			case "monster":
+				loopMessage(message, '[', ']', 2, mon);
+				break;
+			case "item":
+				loopMessage(message, '<', '>', 1, obj);
+				break;
+			default:
+				resDisplay += "\n```";
+				resDisplay += "command input not recognized please use '!pro commands' to see available options";
+				resDisplay += "\n```";
+				message.reply(resDisplay);
+		}
+	}
 });
+/*client.on('message', message => {
+	loopMessage(message, '<', '>', 1, obj);
+	loopMessage(message, '[', ']', 2, mon);
+});*/
 
 client.login(process.env.BOT_TOKEN);
