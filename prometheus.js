@@ -192,7 +192,7 @@ client.on('message', message => {
 							resDisplay += "```";
 							message.reply(resDisplay);
 						} else {
-							resDisplay += "```";
+							resDisplay += "\n```";
 							resDisplay += allItemsDisplay[cmdArray[2]];
 							resDisplay += "```";
 							message.reply(resDisplay);
