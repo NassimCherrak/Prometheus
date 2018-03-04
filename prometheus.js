@@ -109,7 +109,7 @@ function loopMessage(message, first, second, type, list) {
 		}
 	}
 }
-/*client.on('message', message => {
+client.on('message', message => {
 	//loopMessage(message, '<', '>', 1, obj);
 	//loopMessage(message, '[', ']', 2, mon);
 	if(message.content.toLowerCase().startsWith(command)) {
@@ -239,10 +239,10 @@ function loopMessage(message, first, second, type, list) {
 				break;
 				break;
 			case "monster":
-				//loopMessage(message, '[', ']', 2, mon);
+				loopMessage(message, '[', ']', 2, mon);
 				break;
 			case "item":
-				//loopMessage(message, '<', '>', 1, obj);
+				loopMessage(message, '<', '>', 1, obj);
 				break;
 			default:
 				resDisplay += "\n```";
@@ -251,10 +251,10 @@ function loopMessage(message, first, second, type, list) {
 				message.reply(resDisplay);
 		}
 	}
-});*/
-client.on('message', message => {
+});
+/*client.on('message', message => {
 	loopMessage(message, '<', '>', 1, obj);
 	loopMessage(message, '[', ']', 2, mon);
-});
+});*/
 
 client.login(process.env.BOT_TOKEN);
