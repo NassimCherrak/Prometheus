@@ -146,6 +146,7 @@ client.on('message', message => {
 					getURL,
 					["http://code.jquery.com/jquery.js"],
 					function (err, window) {
+						resDisplay += window.$('div').length;
 						var eb = window.$('div#bombs span:eq(0)').text() + "\n";
 						var fa = window.$('div#bombs span:eq(1)').text() + "\n";
 						var ih = window.$('div#bombs span:eq(2)').text() + "\n";
