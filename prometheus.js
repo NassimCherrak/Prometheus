@@ -140,13 +140,13 @@ client.on('message', message => {
 		var cmdArray = message.content.toLowerCase().split(" ");
 		switch(cmdArray[1]) {
 			case "commands":
-
+				break;
 			case "stock":
 				jsdom.env(
 					getURL,
 					["http://code.jquery.com/jquery.js"],
 					function (err, window) {
-						resDisplay += window.$('div').length;
+						resDisplay += getURL;
 						var eb = window.$('div#bombs span:eq(0)').text() + "\n";
 						var fa = window.$('div#bombs span:eq(1)').text() + "\n";
 						var ih = window.$('div#bombs span:eq(2)').text() + "\n";
