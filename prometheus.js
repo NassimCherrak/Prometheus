@@ -76,6 +76,7 @@ function loopMessage(message, first, second, type, list) {
 						resURL,
 						["http://code.jquery.com/jquery.js"],
 						function (err, window) {
+							resDisplay += "\n" + window.$('body') + "\n";
 							if(type == 1) {
 								var selected = window.$('.bgLtTable:eq(1) tbody tr td:eq(1)').text();
 								resDisplay += "**```\t";
