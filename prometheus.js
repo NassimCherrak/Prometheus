@@ -138,8 +138,8 @@ client.on('message', message => {
 		var cmdArray = message.content.toLowerCase().split(" ");
 		switch(cmdArray[1]) {
 			case "commands":
-				/*resDisplay += "\n``` Display Supplies\n";
-				resDisplay += "display all: !pro stock\n";
+				resDisplay += "\n``` Display Supplies\n";
+				/*resDisplay += "display all: !pro stock\n";
 				resDisplay += "display particular item: !pro stock item-name\n";
 				resDisplay += "possible item names: \nemptybottle, fabric, immortal, alcohol, stem, spore, zenorc, mermaid, grenade, acid, coat, slims, starsand\n";
 				resDisplay += "```";
@@ -149,6 +149,7 @@ client.on('message', message => {
 				resDisplay += "\n``` Get Item info from the wiki db\n";
 				resDisplay += "!pro mob monster-name\n";
 				resDisplay += "```";*/
+				message.reply(resDisplay);
 				break;
 			case "stock":
 				jsdom.env(
