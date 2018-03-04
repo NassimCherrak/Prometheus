@@ -265,7 +265,7 @@ client.on('message', message => {
 						for(i=3; i<cmdArray.length; i++) {
 							ite += ' ' + cmdArray[i];
 						}
-						mob += '>';
+						ite += '>';
 					}
 					loopMessage(message, ite, '<', '>', 1, obj);
 				}
