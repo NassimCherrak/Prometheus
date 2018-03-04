@@ -241,7 +241,7 @@ client.on('message', message => {
 				}
 				break;
 			case "mob":
-				if(cmdArray.length >= 3) {
+				/*if(cmdArray.length >= 3) {
 					var mob = '['+ cmdArray[2];
 					if(cmdArray.length == 3) {
 						mob += ']';
@@ -252,7 +252,7 @@ client.on('message', message => {
 						}
 					}
 					loopMessage(message, mob, '[', ']', 2, mon);
-				}
+				}*/
 				break;
 			case "item":
 				if(cmdArray.length == 3) {
