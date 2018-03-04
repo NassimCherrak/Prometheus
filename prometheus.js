@@ -34,7 +34,7 @@ client.on('message', message => {
 			searchURL,
 			["http://code.jquery.com/jquery.js"],
 			function (err, window) {
-				count = window.$('div').length;
+				count = window.$('div.ilist:eq(0)').length;
 				resDisplay += searchURL;
 				if (count < numOfResults) {
 					numOfResults = count;
