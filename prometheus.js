@@ -70,7 +70,7 @@ function loopMessage(message, first, second, type, list) {
 				}
 				
 				if(res.length > 0) {
-					resURL = "http://db.irowiki.org/classic/" + dbType + "-info/" + res + "/";
+					resURL = "http://db.irowiki.org/restart/" + dbType + "-info/" + res + "/";
 					resDisplay += resURL + "\n";
 					jsdom.env(
 						resURL,
