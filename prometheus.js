@@ -242,7 +242,7 @@ client.on('message', message => {
 				break;
 			case "monster":
 				if(cmdArray.length == 3) {
-					var mob = '['+ cmdArray[2] + ']',
+					var mob = '['+ cmdArray[2] + ']';
 					loopMessage(mob, '[', ']', 2, mon);
 				}
 				break;
