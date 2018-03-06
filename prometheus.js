@@ -289,6 +289,8 @@ client.on('message', message => {
 				resDisplay += "\n```";
 				message.reply(resDisplay);
 		}
+	} elseif(message.content.toLowerCase().indexOf("chea") != -1) {
+		message.reply("some von drama? I'm listening!");
 	}
 });
 
