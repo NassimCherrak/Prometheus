@@ -291,7 +291,7 @@ client.on('message', message => {
 		}
 	} else if(message.content.toLowerCase().indexOf("chea ") != -1) {
 		message.reply("some von drama? I'm listening!");
-	} else if(message.content.toLowerCase().indexOf(" auxice ") != -1) {
+	} else if(message.content.toLowerCase().indexOf("auxice") != -1) {
 		message.reply("do it @Von#6488 !!");
 	}
 });
